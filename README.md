@@ -1,5 +1,5 @@
-# OaFe
-
+# Description
+This is a frontend for a simple OA app. Navigate to `https://github.com/yangfangjit/oaback` for the backend server.<br>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 
 ## Development server
