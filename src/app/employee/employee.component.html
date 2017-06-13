@@ -7,18 +7,18 @@
     <table class="table table-responsive table-hover ">
     <thead>
         <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>guid</th>
-        <th>Department</th>
+        <th>UserID</th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Body</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let employee of employeeList">
+        <tr *ngFor="let employee of testList">
+        <td>{{employee.userId}}</td>
         <td>{{employee.id}}</td>
-        <td>{{employee.name}}</td>
-        <td>{{employee.guid}}</td>
-        <td>{{employee.department}}</td>
+        <td>{{employee.title}}</td>
+        <td>{{employee.body}}</td>
         </tr>
         
     </tbody>

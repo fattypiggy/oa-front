@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { EmployeeService } from './service/employee.service';
 import { Employee } from './model/employee-model';
-
+import { Test } from "./model/test-model";
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -21,7 +21,7 @@ export class EmployeeComponent implements OnInit {
 
 	// public searchText:string;
 	// public searchTextStream:Subject<string> = new Subject<string>();
-
+  public testList:Array<Test>;
 	public employeeList:Array<Employee>;
 
   constructor(
@@ -44,11 +44,13 @@ export class EmployeeComponent implements OnInit {
     // let offset = (this.currentPage-1)*this.itemsPerPage;
 		// let end = (this.currentPage)*this.itemsPerPage;
 
-    return this.employeeService.getEmployees().subscribe(
+    return this.employeeService.test().subscribe(
       res => {
-        this.totalItems = res["total"];
+        //this.totalItems = res;
         //TODO.正式环境中，需要去掉slice
-        this.employeeList = res["items"];
+        // this.employeeList = res;
+        console.log(res);
+        this.testList = res;
       },
       error => { console.log(error) },
       () => { }
