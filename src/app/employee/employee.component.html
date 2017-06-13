@@ -1,1 +1,26 @@
-<h1>employee works!</h1>
+<div class="row">
+    <h1>employee works!</h1>
+    <div>
+        <a href="#" class="btn btn-primary btn-xs">Create</a>
+        <a href="#" class="btn btn-danger btn-xs">Delete</a>
+    </div>
+    <table class="table table-responsive table-hover ">
+    <thead>
+        <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>guid</th>
+        <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employeeList">
+        <td>{{employee.id}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.guid}}</td>
+        <td>{{employee.department}}</td>
+        </tr>
+        
+    </tbody>
+    </table> 
+</div>
