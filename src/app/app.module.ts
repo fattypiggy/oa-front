@@ -6,14 +6,19 @@ import {RouterModule} from '@angular/router';
  
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
-import {appRoutes} from './app.routes';
 import { HomeComponent } from './home/home.component'
+import {UserLoginComponent} from './user/user-login/user-login.component';
+import {UserRegisterComponent} from './user/user-register/user-register.component';
+
+import {appRoutes} from './app.routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
-    HomeComponent
+    HomeComponent,
+    UserLoginComponent,
+    UserRegisterComponent
   ],
   imports: [
     BrowserModule,
