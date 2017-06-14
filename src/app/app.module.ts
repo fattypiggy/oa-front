@@ -1,8 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+
+import { TooltipModule, PaginationModule } from 'ngx-bootstrap';
 
 import { EmployeeService } from './employee/service/employee.service'
 
@@ -26,12 +29,14 @@ import { appRoutes } from './app.routes';
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
+    TooltipModule.forRoot(),
     SharedModule
   ],
   providers: [
-    EmployeeService
+    [EmployeeService]
   ],
   bootstrap: [AppComponent]
 })

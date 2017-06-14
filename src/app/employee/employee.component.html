@@ -5,22 +5,26 @@
         <a href="#" class="btn btn-danger btn-xs">Delete</a>
     </div>
     <table class="table table-responsive table-hover ">
-    <thead>
-        <tr>
-        <th>UserID</th>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Body</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let employee of testList">
-        <td>{{employee.userId}}</td>
-        <td>{{employee.id}}</td>
-        <td>{{employee.title}}</td>
-        <td>{{employee.body}}</td>
-        </tr>
-        
-    </tbody>
-    </table> 
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>UserName</th>
+                <th>e-mail</th>
+                <th>Phone</th>
+                <th>Addr</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employeeList">
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.username}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.phone}}</td>
+                <td tooltip={{employee.tooltip}}>{{employee.address.city}}</td>
+            </tr>
+
+        </tbody>
+    </table>
 </div>

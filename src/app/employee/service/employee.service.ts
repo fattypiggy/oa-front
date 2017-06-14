@@ -12,7 +12,8 @@ import { Test } from "../model/test-model";
 export class EmployeeService {
   public employeeURL = 'mock-data/employees.json';
   public testURL = 'https://jsonplaceholder.typicode.com/posts';
-
+  public usersURL ='https://jsonplaceholder.typicode.com/users';
+  public homeURL = 'http://localhost:8080';
   constructor(public http: Http) { }
 
   public getEmployees(): Observable<Employee[]> {
@@ -30,12 +31,24 @@ export class EmployeeService {
       .catch((error: any) => Observable.throw(error || 'Server error'));
   }
 
-  public test():Observable<Test[]>{
-    let testURL = this.testURL;
-    return this.http.get(testURL).map((res:any)=>{
+  public test():Observable<Employee[]>{
+    let usersURL = this.usersURL;
+    return this.http.get(usersURL).map((res:any)=>{
       let result = res.json();
+      // console.log("res");
+      // console.log(res);
+      console.log("result:");
+      console.log(result);
       return result;
     })
     .catch((error:any)=> Observable.throw(error ||`Server error`));
+  }
+
+  public testNginx():Observable<any>{
+    let url = this.homeURL+"/hello";
+    return this.http.get(url).map((res:any)=>{
+      let result = res.json();
+      return result;
+    })
   }
 }
